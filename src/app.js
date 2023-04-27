@@ -19,7 +19,7 @@ const addMessages = (ctx, text) => {
 }
 
 bot.command('start', async ctx => {
-  ctx.session = INITIAL_SESSION
+  ctx.session ? '' : ctx.session = INITIAL_SESSION
   await ctx.reply('Начата новая ссесия')
 })
 
