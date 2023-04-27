@@ -24,7 +24,7 @@ bot.command('start', async ctx => {
 })
 
 bot.on(message('text'), async ctx => {
-  ctx.session ??= INITIAL_SESSION
+   ctx.session ? '' : ctx.session = INITIAL_SESSION
   try {
     await ctx.reply(code(`Ожидаю ответ от GPT...`))
     addMessages(ctx, ctx.message.text)
